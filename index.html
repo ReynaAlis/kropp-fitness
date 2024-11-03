@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Kropp Fitness - your destination for CrossFit, personal training, and fitness. Join us and achieve your fitness goals with expert guidance.">
+    <meta name="keywords"
+        content="CrossFit, fitness, gym, personal training, workout, bodybuilding, strength training, health, join us, fitness event">
+
+    <title>Kropp Fitness</title>
+
+    <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="MyWebSite">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/main.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <a class="header__logo" href="/">
+            <img class="header__logo-image" src="images/header-logo.png" alt="Logo Kropp Fintess" width="135"
+                height="25" loading="lazy">
+        </a>
+
+        <nav class="header__menu" aria-label="Main Navigation">
+            <ul class="header__menu-list">
+                <li class="header__menu-item">
+                    <a class="header__menu-link is-current" href="/" aria-current="page">Home</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="/">Pages</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="/">Portfolio</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="/">Blog</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="/">Shop</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header__actions">
+            <button class="header__book-button button" type="button" aria-label="Book a session">Book now</button>
+
+            <button class="header__burger-button" type="button" title="Open menu">
+                <span class="visually-hidden">Open menu</span>
+                <span class="header__burger-button-line"></span>
+                <span class="header__burger-button-line"></span>
+                <span class="header__burger-button-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1 class="visually-hidden">Kropp Fintess Club</h1>
+        <section class="banner">
+            <h2 class="visually-hidden">Upcoming events</h2>
+            <div class="banner__body">
+                <div class="banner__info is-active">
+                    New event <br>
+                    coming up / <time datetime="2024-06-07">june 7</time>&nbsp;-&nbsp;<time
+                        datetime="2024-06-13">13</time>
+                </div>
+                <h3 class="banner__title">Crossfit</h3>
+            </div>
+
+            <div class="banner__body">
+                <div class="banner__info">
+                    New event <br>
+                    coming up / <time datetime="2024-07-01">july 1</time>&nbsp;-&nbsp;<time
+                        datetime="2024-07-07">7</time>
+                </div>
+                <h3 class="banner__title">HIIT</h3>
+            </div>
+
+            <div class="banner__body">
+                <div class="banner__info">
+                    New event <br>
+                    coming up / <time datetime="2024-08-15">aug 15</time>&nbsp;-&nbsp;<time
+                        datetime="2024-08-21">21</time>
+                </div>
+                <h3 class="banner__title">Deadlifts</h3>
+            </div>
+
+            <div class="banner__pagination" role="navigation" aria-label="Slider Pagination">
+                <ul class="banner__pagination-list">
+                    <li class="banner__pagination-item">
+                        <button class="banner__pagination-button" type="button" aria-label="Go to slide 1"></button>
+                    </li>
+                    <li class="banner__pagination-item">
+                        <button class="banner__pagination-button" type="button" aria-label="Go to slide 2"></button>
+                    </li>
+                    <li class="banner__pagination-item">
+                        <button class="banner__pagination-button is-current" type="button"
+                            aria-label="Go to slide 3"></button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="motivation">
+            <h2 class="visually-hidden">Motivation</h2>
+            <ul class="motivation__list">
+                <li class="motivation__item">
+                    <div class="motivation__card container">
+                        <div class="motivation__card-body">
+                            <h3 class="motivation__card-title title-medium backdrop-title" data-title="Strong">Be you,
+                                just
+                                stronger!<br> Power is in you</h3>
+                            <div class="motivation__card-description">
+                                <p>Unum solum justo ex ius. Pro cu probo laboramus eius insolens euripidis te eos, ut
+                                    agam tota.</p>
+                            </div>
+                            <a class="motivation__card-button button transparent" href="/">View more</a>
+                        </div>
+
+                        <picture class="motivation__card-image">
+                            <source srcset="./images/motivation/1.avif" type="image/avif">
+                            <source srcset="./images/motivation/1.webp" type="image/webp">
+                            <img src="./images/motivation/1.jpg" alt="A man pulls himself up on a horizontal bar"
+                                width="518" height="760" loading="lazy">
+                        </picture>
+                    </div>
+                </li>
+
+                <li class="motivation__item">
+                    <div class="motivation__card container">
+                        <div class="motivation__card-body">
+                            <h3 class="motivation__card-title title-medium backdrop-title" data-title="Start">Today is
+                                the best<br>
+                                day to start!</h3>
+                            <div class="motivation__card-description">
+                                <p>Sed abhorreant constituam consectetuer eu. At mei clita deserunt, his movet molestie
+                                    nemore.</p>
+                            </div>
+                            <a class="motivation__card-button button transparent" href="/">View more</a>
+                        </div>
+
+                        <picture class="motivation__card-image">
+                            <source srcset="./images/motivation/2.avif" type="image/avif">
+                            <source srcset="./images/motivation/2.webp" type="image/webp">
+                            <img src="./images/motivation/2.jpg" alt="A man exercises with dumbbells" width="518"
+                                height="760" loading="lazy">
+                        </picture>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="training__tipes container-wide">
+            <h2 class="visually-hidden">Tipes of training</h2>
+            <ul class="training__types-list">
+                <li class="training__types-item">
+                    <img class="training__types-image" src="./images/training_types/1.svg" alt="" width="140"
+                        height="142" loading="lazy">
+                    <h3 class="training__types-item-title">maxpump</h3>
+                </li>
+
+                <li class="training__types-item">
+                    <img class="training__types-image" src="./images/training_types/2.svg" alt="" width="140"
+                        height="142" loading="lazy">
+                    <h3 class="training__types-item-title">aron gym</h3>
+                </li>
+
+                <li class="training__types-item">
+                    <img class="training__types-image" src="./images/training_types/3.svg" alt="" width="140"
+                        height="142" loading="lazy">
+                    <h3 class="training__types-item-title">fit&amp;tone</h3>
+                </li>
+
+                <li class="training__types-item">
+                    <img class="training__types-image" src="./images/training_types/4.svg" alt="" width="140"
+                        height="142" loading="lazy">
+                    <h3 class="training__types-item-title">forza</h3>
+                </li>
+
+                <li class="training__types-item">
+                    <img class="training__types-image" src="./images/training_types/5.svg" alt="" width="140"
+                        height="142" loading="lazy">
+                    <h3 class="training__types-item-title">balance fitness</h3>
+                </li>
+
+                <li class="training__types-item">
+                    <img class="training__types-image" src="./images/training_types/6.svg" alt="" width="140"
+                        height="142" loading="lazy">
+                    <h3 class="training__types-item-title">body sculpt</h3>
+                </li>
+            </ul>
+        </section>
+
+        <section class="join">
+            <div class="join__video-wrapper">
+                <video class="join__video" src="" poster="./images/join/video-poster.jpg" width="960"
+                    height="600"></video>
+                <button class="join__video-play-button" type="button">Play</button>
+            </div>
+
+            <div class="join__body container">
+                <h2 class="join__body-title">JOIN US</h2>
+                <form class="join__form" action="">
+                    <header class="join__form-header">
+                        <h3 class="join__form-header-title backdrop-title centered title-big" data-title="Go!">Start
+                            here</h3>
+                        <div class="join__form-subtitle section-description">fill the form below to start your journey
+                        </div>
+                    </header>
+                    <div class="join__form-body">
+                        <label class="visually-hidden" for="username">Name</label>
+                        <input class="join__form-input input" type="text" placeholder="Name" id="username">
+
+                        <label class="visually-hidden" for="email">Email</label>
+                        <input class="join__form-input input" type="email" placeholder="Email" id="email">
+
+                        <button class="join__form-button button transparent" type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="location container-wide">
+            <div id="map" class="location__map">
+            </div>
+
+            <div class="location__body">
+                <h2 class="location__title title-medium backdrop-title centered" data-title="Look">Find us near you</h2>
+                <div class="location__description">
+                    <p>Nec suas signiferumque id. An eum labore commodo principes. Usu diam noluisse cu, nam adipisci
+                    </p>
+                </div>
+                <a class="location__button button transparent" href="/">view more</a>
+            </div>
+        </section>
+
+        <section class="family">
+            <header class="family__header container">
+                <h2 class="family__title title-big backdrop-title centered" data-title="Part">be a part of our fit
+                    family</h2>
+                <div class="family__description section-description">
+                    <p>Training helps you think and feel better. join us!</p>
+                </div>
+            </header>
+            <div class="family__body container-wide">
+                <picture class="family__body-img">
+                    <source srcset="./images/family/1.avif" type="image/avif">
+                    <source srcset="./images/family/1.webp" type="image/webp">
+                    <img src="./images/family/1.jpg" alt="Training people" width="414" height="479" loading="lazy">
+                </picture>
+
+                <picture class="family__body-img">
+                    <source srcset="./images/family/2.avif" type="image/avif">
+                    <source srcset="./images/family/2.webp" type="image/webp">
+                    <img class="family__body-img" src="./images/family/2.jpg" alt="Training people" width="744"
+                        height="479" loading="lazy">
+                </picture>
+
+                <picture class="family__body-img">
+                    <source srcset="./images/family/3.avif" type="image/avif">
+                    <source srcset="./images/family/3.webp" type="image/webp">
+                    <img class="family__body-img" src="./images/family/3.jpg" alt="Training people" width="396"
+                        height="479" loading="lazy">
+                </picture>
+
+                <picture class="family__body-img">
+                    <source srcset="./images/family/4.avif" type="image/avif">
+                    <source srcset="./images/family/4.webp" type="image/webp">
+                    <img class="family__body-img" src="./images/family/4.jpg" alt="Training people" width="396"
+                        height="479" loading="lazy">
+                </picture>
+
+                <picture class="family__body-img">
+                    <source srcset="./images/family/1.avif" type="image/avif">
+                    <source srcset="./images/family/1.webp" type="image/webp">
+                    <img class="family__body-img" src="./images/family/1.jpg" alt="Training people" width="414"
+                        height="479" loading="lazy">
+                </picture>
+            </div>
+        </section>
+
+        <section class="calculate">
+            <div class="calculate__inner container">
+                <div class="calculate__body">
+                    <h2 class="calculate__title title-medium backdrop-title" data-title="BMI">Input your BMI</h2>
+
+                    <div class="calculate__description">
+                        <p>Duo graece ponderum ne, ei mel aliquando. Pro te tamquam nonumes, nam no nemore epicurei</p>
+                    </div>
+
+                    <form class="calculate__form">
+                        <div class="calculate__form-body">
+                            <label class="visually-hidden" for="Height">Height</label>
+                            <input class="calculate__input input" type="number" placeholder="Height / cm" id="height">
+
+                            <label class="visually-hidden" for="Weight">Weight</label>
+                            <input class="calculate__input input" type="number" placeholder="Weight / kg" id="weight">
+
+                            <label class="visually-hidden" for="Age">Age</label>
+                            <input class="calculate__input input" type="number" placeholder="Age" id="age">
+
+                            <label class="visually-hidden" for="gender">Gender</label>
+                            <select class="calculate__input input" id="gender">
+                                <option value="" disabled selected>Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+
+                            <label class="visually-hidden" for="activity-factor">Activity-factor</label>
+                            <select class="calculate__input input wide" id="activity-factor">
+                                <option value="" disabled selected>Select an activity factor:</option>
+                                <option value="sedentary">Sedentary</option>
+                                <option value="lightly active">Lightly active</option>
+                                <option value="moderately active">Moderately active</option>
+                                <option value="very active">Very active</option>
+                                <option value="super active ">Super active</option>
+                            </select>
+                        </div>
+
+                        <button class="calculate__button button transparent" type="submit">Calculate</button>
+                    </form>
+                </div>
+
+                <div class="calculate__table-wrapper">
+                    <table class="calculate__table">
+                        <thead>
+                            <tr>
+                                <th>BMI</th>
+                                <th>Weight status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Below 18.5</td>
+                                <td>Underweight</td>
+                            </tr>
+
+                            <tr>
+                                <td>18.5 - 24.9</td>
+                                <td>Healthy</td>
+                            </tr>
+
+                            <tr>
+                                <td>25.0 - 29.9</td>
+                                <td>Overweight</td>
+                            </tr>
+
+                            <tr>
+                                <td>30.0 - and Above</td>
+                                <td>Obese</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2"><b>BMR</b> Metabolic Rate / <b>BMI</b> Body Mass Index</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="footer__container container">
+                <div class="footer__header">
+                    <a class="footer__logo" href="/">
+                        <img class="footer__logo-image" src="images/header-logo.png" alt="Logo Kropp Fitness"
+                            width="270" height="50" loading="lazy">
+                    </a>
+
+                    <p class="footer__description section-description">please feel free to send us an e-mail at <a
+                            href="mailto:kropp@qodeinteractive.com">kropp@qodeinteractive.com</a> For any additional
+                        inquiries</p>
+                </div>
+                <div class="footer__body">
+                    <div class="footer__column">
+                        <h2 class="footer__column-title">About</h2>
+                        <p class="footer__about">Shape up your site with Kropp,
+                            a theme especially made for
+                            fitness & gym websites.</p>
+                    </div>
+
+                    <div class="footer__column">
+                        <h2 class="footer__column-title">Working hours</h2>
+                        <div class="footer__schedule">
+                            Monday - Friday<br>
+                            <time datetime="05:30">05:30</time> - <time datetime="00:00">24:00</time>
+                        </div>
+
+                        <div class="footer__schedule">
+                            Weekdays<br>
+                            <time datetime="00:00">00:00</time> - <time datetime="00:00">24:00</time>
+                        </div>
+                    </div>
+
+                    <div class="footer__column">
+                        <h2 class="footer__column-title">Location</h2>
+                        <address class="footer__address">
+                            68 Jay Street, Brooklyn,<br>
+                            NY 11201, United States
+                        </address>
+                        <div class="footer__contacts">
+                            <ul class="footer__contacts-list">
+                                <li class="footer__contacts-item">
+                                    <a class="footer__contacts-link"
+                                        href="mailto:kropp@qodeinteractive.com">kropp@qodeinteractive.com</a>
+                                </li>
+                                <li class="footer__contacts-item">
+                                    <a class="footer__contacts-link" href="tel:+17184076400">+ (1) 718 - 407 - 6400</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer__column">
+                        <h2 class="footer__column-title has-arrow">start now</h2>
+                        <form class="footer__subscribe">
+                            <label class="visually-hidden" for="subscribe-email">Email</label>
+                            <input class="footer__subscribe-input input" type="email" placeholder="Email"
+                                id="subscribe-email">
+                            <button class="footer__subscribe-button" type="submit" title="Subscribe"><span
+                                    class="visually-hidden">Subscribe</span></button>
+                        </form>
+
+                        <div class="footer__socials">
+                            <ul class="footer__socials-list">
+                                <li class="footer__socials-item">
+                                    <a class="footer__socials-link" href="/" target="_blank">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16.8217 5.1344C16.0886 4.29394 15.6479 3.19805 15.6479 2H14.7293M16.8217 5.1344C17.4898 5.90063 18.3944 6.45788 19.4245 6.67608C19.7446 6.74574 20.0786 6.78293 20.4266 6.78293V10.2191C18.645 10.2191 16.9932 9.64801 15.6477 8.68211V15.6707C15.6477 19.1627 12.8082 22 9.32386 22C7.50043 22 5.85334 21.2198 4.69806 19.98C3.64486 18.847 2.99994 17.3331 2.99994 15.6707C2.99994 12.2298 5.75592 9.42509 9.17073 9.35079M16.8217 5.1344C16.8039 5.12276 16.7861 5.11101 16.7684 5.09914M6.9855 17.3517C6.64217 16.8781 6.43802 16.2977 6.43802 15.6661C6.43802 14.0734 7.73249 12.7778 9.32394 12.7778C9.62087 12.7778 9.9085 12.8288 10.1776 12.9124V9.40192C9.89921 9.36473 9.61622 9.34149 9.32394 9.34149C9.27287 9.34149 8.86177 9.36884 8.81073 9.36884M14.7244 2H12.2097L12.2051 15.7775C12.1494 17.3192 10.8781 18.5591 9.32386 18.5591C8.35878 18.5591 7.50971 18.0808 6.98079 17.3564"
+                                                stroke="#000000" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                </li>
+
+                                <li class="footer__socials-item">
+                                    <a class="footer__socials-link" href="/" target="_blank">
+                                        <svg viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M18.168 19.0028C20.4724 19.0867 22.41 17.29 22.5 14.9858V9.01982C22.41 6.71569 20.4724 4.91893 18.168 5.00282H6.832C4.52763 4.91893 2.58998 6.71569 2.5 9.01982V14.9858C2.58998 17.29 4.52763 19.0867 6.832 19.0028H18.168Z"
+                                                stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12.008 9.17784L15.169 11.3258C15.3738 11.4454 15.4997 11.6647 15.4997 11.9018C15.4997 12.139 15.3738 12.3583 15.169 12.4778L12.008 14.8278C11.408 15.2348 10.5 14.8878 10.5 14.2518V9.75184C10.5 9.11884 11.409 8.77084 12.008 9.17784Z"
+                                                stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                </li>
+
+                                <li class="footer__socials-item">
+                                    <a class="footer__socials-link" href="/" target="_blank">
+                                        <svg viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M15.5 5H9.5C7.29086 5 5.5 6.79086 5.5 9V15C5.5 17.2091 7.29086 19 9.5 19H15.5C17.7091 19 19.5 17.2091 19.5 15V9C19.5 6.79086 17.7091 5 15.5 5Z"
+                                                stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12.5 15C10.8431 15 9.5 13.6569 9.5 12C9.5 10.3431 10.8431 9 12.5 9C14.1569 9 15.5 10.3431 15.5 12C15.5 12.7956 15.1839 13.5587 14.6213 14.1213C14.0587 14.6839 13.2956 15 12.5 15Z"
+                                                stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <rect x="15.5" y="9" width="2" height="2" rx="1"
+                                                transform="rotate(-90 15.5 9)" fill="#000000" />
+                                            <rect x="16" y="8.5" width="1" height="1" rx="0.5"
+                                                transform="rotate(-90 16 8.5)" stroke="#000000"
+                                                stroke-linecap="round" />
+                                        </svg>
+                                    </a>
+                                </li>
+
+                                <li class="footer__socials-item">
+                                    <a class="footer__socials-link" href="/" target="_blank">
+                                        <svg fill="#fff" viewBox="-9.5 0 32 32"
+                                            version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke="#000000"
+                                                d="M7.44 26.68h-2.92c-1 0-1.84-0.84-1.84-1.84v-6.56h-0.84c-1 0-1.84-0.84-1.84-1.84v-2.48c0-1 0.84-1.84 1.84-1.84h0.88v-0.8c0-3.68 2.12-6 5.56-6 1.2 0 2.24 0.080 2.68 0.12 0.92 0.12 1.6 0.92 1.6 1.84v2.48c0 1-0.84 1.84-1.84 1.84h-1.36v0.52h1.28c1 0 1.84 0.84 1.84 1.84 0 0.12 0 0.2-0.040 0.32l-0.4 2.4c-0.12 0.88-0.92 1.56-1.84 1.56h-0.84v6.56c-0.040 1.040-0.88 1.88-1.92 1.88zM1.84 13.8c-0.080 0-0.16 0.080-0.16 0.16v2.48c0 0.080 0.080 0.16 0.16 0.16h1.72c0.48 0 0.84 0.36 0.84 0.84v7.36c0 0.080 0.080 0.16 0.16 0.16h2.92c0.080 0 0.16-0.080 0.16-0.16v-7.36c0-0.48 0.36-0.84 0.84-0.84h1.68c0.080 0 0.16-0.080 0.16-0.16l0.4-2.48c0-0.080-0.080-0.16-0.16-0.16h-2.12c-0.48 0-0.84-0.36-0.84-0.84v-1.68c0-0.36 0.040-0.6 0.12-0.8s0.2-0.32 0.4-0.4c0.2-0.12 0.48-0.16 0.88-0.16h1.68c0.080 0 0.16-0.080 0.16-0.16v-2.48c0-0.080-0.080-0.16-0.16-0.16-0.32-0.040-1.32-0.12-2.44-0.12-3.36 0-3.88 2.72-3.88 4.32v1.64c0 0.48-0.36 0.84-0.84 0.84 0 0-1.68 0-1.68 0z">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </li>
+
+                                <li class="footer__socials-item">
+                                    <a class="footer__socials-link" href="/" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="#fff">
+                                            <path stroke="#000000"
+                                                d="M 5.9199219 6 L 20.582031 27.375 L 6.2304688 44 L 9.4101562 44 L 21.986328 29.421875 L 31.986328 44 L 44 44 L 28.681641 21.669922 L 42.199219 6 L 39.029297 6 L 27.275391 19.617188 L 17.933594 6 L 5.9199219 6 z M 9.7167969 8 L 16.880859 8 L 40.203125 42 L 33.039062 42 L 9.7167969 8 z" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__extra">
+            <div class="footer__extra-container container">
+                <div class="footer__copyright">© <time datetime="2022">2022</time> Qode Interactive, All Rights Reserved
+                    |
+                    <a href="/">Privacy Policy</a> | <a href="/">Contact
+                        Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
